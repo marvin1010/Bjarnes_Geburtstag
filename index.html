@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#11162c">
+  <meta name="description" content="Bjarnes Geburtstags-Glücksrad: Welches All-You-Can-Eat in Hamburg wird es?">
+  <meta property="og:title" content="Alles Gute zum 26., Bjarne! 🎉">
+  <meta property="og:description" content="Dreh am Glücksrad und lass das Schicksal unser All-You-Can-Eat auswählen.">
+  <title>Alles Gute zum 26., Bjarne! 🎉</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=3">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="mini-badge"><span aria-hidden="true">🎁</span> Geburtstags-Spezial</div>
+      <p class="eyebrow">Heute wird nicht gezählt. Heute wird geschlemmt.</p>
+      <h1>Alles Gute zum<br><span>26., Bjarne!</span></h1>
+      <p class="hero-copy">
+        Für dein neues Lebensjahr gibt es keinen langweiligen Gutschein,
+        sondern eine Mission: <strong>All You Can Eat in Hamburg.</strong>
+      </p>
+      <button class="primary-button" id="unwrapButton" type="button">
+        <span>Geschenk auspacken</span><span aria-hidden="true">↓</span>
+      </button>
+      <div class="food-float food-one" aria-hidden="true">🍣</div>
+      <div class="food-float food-two" aria-hidden="true">🥟</div>
+      <div class="food-float food-three" aria-hidden="true">🔥</div>
+      <div class="food-float food-four" aria-hidden="true">🍜</div>
+    </section>
+
+    <section class="gift-section" id="gift" aria-labelledby="wheelTitle">
+      <div class="gift-card">
+        <header class="gift-header">
+          <p class="eyebrow">Dein Geburtstagsgutschein</p>
+          <h2 id="wheelTitle">Das Schicksal wählt unser Restaurant.</h2>
+          <p>
+            Ein Dreh. Drei Kandidaten. Unbegrenzt gutes Essen.
+            <strong>Ich lade dich ein.</strong>
+          </p>
+        </header>
+
+        <div class="restaurant-strip" aria-label="Die drei möglichen Restaurants">
+          <div class="restaurant-chip"><img src="assets/kofookoo.webp" alt="kofookoo"><span>Sushi · Grill · Bar</span></div>
+          <div class="restaurant-chip"><img src="assets/mr-kao.svg" alt="Mr Kao"><span>Korean BBQ</span></div>
+          <div class="restaurant-chip"><img src="assets/mr-cherng.png" alt="Mr. Cherng"><span>Asian Buffet</span></div>
+        </div>
+
+        <div class="wheel-zone">
+          <div class="pointer" aria-hidden="true"><span></span></div>
+          <div class="wheel-shell">
+            <canvas id="wheel" width="720" height="720" aria-label="Glücksrad mit kofookoo, Mr Kao und Mr. Cherng"></canvas>
+            <div class="wheel-center" aria-hidden="true"><span>26</span><small>Jahre</small></div>
+          </div>
+          <button class="spin-button" id="spinButton" type="button">
+            <span class="spin-main">Glücksrad drehen</span>
+            <span class="spin-sub">Nur das Schicksal entscheidet</span>
+          </button>
+          <p class="fine-print" id="spinStatus" aria-live="polite">Jedes Restaurant hat exakt die gleiche Chance.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog class="result-dialog" id="resultDialog" aria-labelledby="resultHeading">
+    <div class="result-card">
+      <button class="close-button" id="closeDialog" type="button" aria-label="Ergebnis schließen">×</button>
+      <div class="result-spark" aria-hidden="true">✦</div>
+      <p class="eyebrow">Das Glücksrad hat entschieden</p>
+      <div class="result-logo-wrap"><img id="resultLogo" alt=""></div>
+      <h2 id="resultHeading"></h2>
+      <p id="resultText"></p>
+      <div class="voucher-stamp">
+        <span>GUTSCHEIN</span>
+        <strong>1× All You Can Eat</strong>
+        <small>Für Bjarne · von mir für dich</small>
+      </div>
+      <div class="result-actions">
+        <a class="primary-button compact download-button" id="voucherLink" href="#" download>
+          <span aria-hidden="true">↓</span> PDF-Gutschein herunterladen
+        </a>
+        <a class="secondary-button compact" id="restaurantLink" href="#" target="_blank" rel="noopener">Restaurant ansehen</a>
+        <button class="secondary-button share-button" id="shareButton" type="button">Ergebnis teilen</button>
+      </div>
+      <p class="result-note">Termin und Hungerlevel bestimmen wir gemeinsam. 🍽️</p>
+    </div>
+  </dialog>
+
+  <footer>
+    <p>Mit Liebe, Hunger und einer Prise Zufall gemacht. Happy Birthday, Bjarne! 🥳</p>
+  </footer>
+
+  <script src="script.js?v=3" defer></script>
+</body>
+</html>
